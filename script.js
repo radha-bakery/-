@@ -340,6 +340,8 @@ const PRODUCTS = [
 ];
 
 const WHATSAPP_NUMBER = "919418310089";
+const UPI_ID = "XXXXXXXXXX@upi";
+const UPI_NAME = "Radha Bakers";
 const grid = document.getElementById("productGrid");
 const tabs = document.getElementById("categoryTabs");
 const cartPanel = document.getElementById("cartPanel");
@@ -384,6 +386,7 @@ function renderProducts(){
       <h3>${p.name}</h3>
       <div class="card-meta"><span class="price">${priceText}</span><span class="badge">${p.category}</span></div>
       ${variantHtml}
+      <textarea class="item-remark-input" id="remark-${p.id}" placeholder="Item Remark: Happy Birthday Raj / Extra Spicy / Less Sugar"></textarea>
       <div class="card-actions">
         <div class="qty"><button onclick="changeQty('${p.id}',-1)">−</button><span id="qty-${p.id}">1</span><button onclick="changeQty('${p.id}',1)">+</button></div>
         <button class="add" onclick="addToCart('${p.id}')">Add to Cart</button>
@@ -401,13 +404,14 @@ window.changeQty = function(id, delta){
 window.addToCart = function(id){
   const p = PRODUCTS.find(x => x.id === id);
   const qty = Number(document.getElementById("qty-" + id)?.textContent || 1);
+  const remark = (document.getElementById("remark-" + id)?.value || "").trim();
   const variantIndex = p.variants ? Number(document.getElementById("variant-" + id).value) : 0;
   const variant = productVariantLabel(p, variantIndex);
   const price = productPrice(p, variantIndex);
-  const key = id + "::" + variant;
+  const key = id + "::" + variant + "::" + remark;
   const existing = cart.find(item => item.key === key);
   if(existing) existing.qty += qty;
-  else cart.push({key, id:p.id, name:p.name, variant, price, qty, img:p.img});
+  else cart.push({key, id:p.id, name:p.name, variant, price, qty, img:p.img, remark});
   saveCart();
   openCart();
 }
@@ -434,6 +438,7 @@ function renderCart(){
     <div>
       <h4>${item.name} ${item.variant ? `<small>(${item.variant})</small>` : ""}</h4>
       <p>${rupee(item.price)} × ${item.qty} = <b>${rupee(item.price * item.qty)}</b></p>
+      ${item.remark ? `<p class="cart-remark"><b>Item Remark:</b> ${item.remark}</p>` : ""}
       <div style="display:flex;gap:6px;margin-top:7px">
         <button onclick="cartQty(${index},-1)">−</button>
         <button onclick="cartQty(${index},1)">+</button>
@@ -470,18 +475,67 @@ document.getElementById("openCart").onclick = openCart;
 document.getElementById("closeCart").onclick = closeCart;
 overlay.onclick = closeCart;
 
+function getBookingDetails(){
+  return {
+    name: document.getElementById("customerName")?.value.trim() || "",
+    mobile: document.getElementById("customerMobile")?.value.trim() || "",
+    type: document.getElementById("orderType")?.value || "Take Away",
+    date: document.getElementById("orderDate")?.value || "",
+    time: document.getElementById("orderTime")?.value || "",
+    address: document.getElementById("customerAddress")?.value.trim() || ""
+  };
+}
+
+function validateBooking(){
+  const d = getBookingDetails();
+  if(!d.name){ alert("Customer Name bharna zaruri hai."); return false; }
+  if(!d.mobile){ alert("Mobile Number bharna zaruri hai."); return false; }
+  if(!d.date){ alert("Pickup / Delivery Date select karo."); return false; }
+  if(!d.time){ alert("Pickup / Delivery Time select karo."); return false; }
+  if(d.type === "Home Delivery" && !d.address){ alert("Home Delivery ke liye address zaruri hai."); return false; }
+  return true;
+}
+
+document.getElementById("upiPayBtn").onclick = function(){
+  if(cart.length === 0) {
+    alert("Cart empty hai.");
+    return;
+  }
+  if(!validateBooking()) return;
+  const total = cart.reduce((s,i)=>s+i.qty*i.price,0);
+  const upiLink = `upi://pay?pa=${encodeURIComponent(UPI_ID)}&pn=${encodeURIComponent(UPI_NAME)}&am=${total}&cu=INR&tn=${encodeURIComponent("Radha Bakers Order Booking")}`;
+  window.location.href = upiLink;
+}
+
 document.getElementById("checkoutBtn").onclick = function(){
   if(cart.length === 0) {
     alert("Cart empty hai.");
     return;
   }
+  if(!validateBooking()) return;
+
+  const d = getBookingDetails();
   const lines = cart.map((item, i) => {
     const title = item.variant ? `${item.name} (${item.variant})` : item.name;
-    return `${i+1}. ${title} × ${item.qty} = ${rupee(item.price * item.qty)}`;
-  }).join("%0A");
+    const remarkLine = item.remark ? `%0AItem Remark: ${encodeURIComponent(item.remark)}` : "";
+    return `${i+1}. ${encodeURIComponent(title)} × ${item.qty} = ${encodeURIComponent(rupee(item.price * item.qty))}${remarkLine}`;
+  }).join("%0A%0A");
+
   const total = cart.reduce((s,i)=>s+i.qty*i.price,0);
   const message =
-`Hello Radha Bakers,%0A%0AI want to order:%0A${lines}%0A%0ATotal Amount: ${rupee(total)}%0A%0AName:%0AAddress:%0ADelivery / Pickup:%0A%0APlease confirm my order.`;
+`Radha Bakers Order%0A%0A` +
+`Name: ${encodeURIComponent(d.name)}%0A` +
+`Mobile: ${encodeURIComponent(d.mobile)}%0A%0A` +
+`Order Type: ${encodeURIComponent(d.type)}%0A` +
+`Date: ${encodeURIComponent(d.date)}%0A` +
+`Time: ${encodeURIComponent(d.time)}%0A` +
+`${d.address ? `Address: ${encodeURIComponent(d.address)}%0A` : ""}%0A` +
+`Items:%0A%0A${lines}%0A%0A` +
+`Payment Option: UPI / Cash%0A` +
+`UPI ID: ${encodeURIComponent(UPI_ID)}%0A` +
+`Total Amount: ${encodeURIComponent(rupee(total))}%0A%0A` +
+`Please confirm my order.`;
+
   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
 }
 

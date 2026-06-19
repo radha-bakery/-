@@ -85,3 +85,68 @@ linear-gradient(120deg,#fff2d7,#fffaf2 55%,#ffe8bd)}
   .category-tabs{top:77px}.contact{margin:30px 14px;display:block}.contact h2{font-size:30px}
   .float{width:130px;height:105px}.hero-logo{width:82%}
 }
+
+
+/* Checkout booking details + item remark */
+.checkout-form{
+  padding:16px 18px;
+  border-bottom:1px solid #ead6bd;
+  background:#fff7ec;
+}
+.checkout-form h4{
+  margin:0 0 12px;
+  color:var(--maroon);
+  font-size:16px;
+}
+.checkout-form input,
+.checkout-form select,
+.checkout-form textarea,
+.item-remark-input{
+  width:100%;
+  border:1px solid #ead6bd;
+  background:#fff;
+  border-radius:12px;
+  padding:10px 12px;
+  margin-bottom:9px;
+  font:inherit;
+  outline:none;
+}
+.checkout-form textarea{
+  min-height:58px;
+  resize:vertical;
+}
+.item-remark-input{
+  min-height:48px;
+  resize:vertical;
+  margin:12px 0 0;
+  font-size:13px;
+}
+.upi-box{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  padding:10px 12px;
+  border-radius:12px;
+  background:#fff1cf;
+  border:1px dashed var(--gold);
+  color:#5a2b24;
+  margin:4px 0 10px;
+}
+.pay-btn{
+  width:100%;
+  border:0;
+  background:linear-gradient(135deg,#1d4ed8,#0f766e);
+  color:white;
+  border-radius:14px;
+  padding:12px;
+  font-weight:950;
+  cursor:pointer;
+}
+.cart-remark{
+  font-size:13px;
+  background:#fff1dd;
+  border-radius:8px;
+  padding:6px 8px;
+  color:#5a2b24 !important;
+}

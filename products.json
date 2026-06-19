@@ -1,0 +1,340 @@
+[
+  {
+    "id": "pineapple-cake",
+    "name": "Pineapple Cake",
+    "category": "Cakes 500g",
+    "price": 500,
+    "img": "pineapple-cake.jpg"
+  },
+  {
+    "id": "black-forest-cake",
+    "name": "Black Forest Cake",
+    "category": "Cakes 500g",
+    "price": 500,
+    "img": "black-forest-cake.jpg"
+  },
+  {
+    "id": "butterscotch-cake",
+    "name": "Butterscotch Cake",
+    "category": "Cakes 500g",
+    "price": 500,
+    "img": "butterscotch-cake.jpg"
+  },
+  {
+    "id": "choco-truffle-cake",
+    "name": "Choco Truffle Cake",
+    "category": "Cakes 500g",
+    "price": 550,
+    "img": "choco-truffle-cake.jpg"
+  },
+  {
+    "id": "red-velvet-cake",
+    "name": "Red Velvet Cake",
+    "category": "Cakes 500g",
+    "price": 650,
+    "img": "red-velvet-cake.jpg"
+  },
+  {
+    "id": "mango-cake",
+    "name": "Mango Cake",
+    "category": "Cakes 500g",
+    "price": 550,
+    "img": "mango-cake.jpg"
+  },
+  {
+    "id": "strawberry-cake",
+    "name": "Strawberry Cake",
+    "category": "Cakes 500g",
+    "price": 550,
+    "img": "strawberry-cake.jpg"
+  },
+  {
+    "id": "blueberry-cake",
+    "name": "Blue Berry Cake",
+    "category": "Cakes 500g",
+    "price": 550,
+    "img": "blueberry-cake.jpg"
+  },
+  {
+    "id": "fresh-mango-cake",
+    "name": "Fresh Mango Cake",
+    "category": "Cakes 500g",
+    "price": 550,
+    "img": "fresh-mango-cake.jpg"
+  },
+  {
+    "id": "corn-pizza",
+    "name": "Corn Pizza",
+    "category": "Pizza",
+    "price": 180,
+    "img": "corn-pizza.jpg"
+  },
+  {
+    "id": "veg-pizza",
+    "name": "Veg Pizza",
+    "category": "Pizza",
+    "price": 200,
+    "img": "veg-pizza.jpg"
+  },
+  {
+    "id": "cheese-pizza",
+    "name": "Cheese Pizza",
+    "category": "Pizza",
+    "price": 170,
+    "img": "cheese-pizza.jpg"
+  },
+  {
+    "id": "pizza-slice",
+    "name": "Pizza Slice",
+    "category": "Pizza",
+    "price": 60,
+    "img": "pizza-slice.jpg"
+  },
+  {
+    "id": "paneer-corn-pizza",
+    "name": "Paneer Corn Pizza",
+    "category": "Pizza",
+    "price": 230,
+    "img": "paneer-corn-pizza.jpg"
+  },
+  {
+    "id": "pastry-1",
+    "name": "Pastry 1",
+    "category": "Pastry",
+    "price": 0,
+    "img": "pastry-1.jpg",
+    "note": "Price on request"
+  },
+  {
+    "id": "pastry-2",
+    "name": "Pastry 2",
+    "category": "Pastry",
+    "price": 0,
+    "img": "pastry-2.jpg",
+    "note": "Price on request"
+  },
+  {
+    "id": "pastry-3",
+    "name": "Pastry 3",
+    "category": "Pastry",
+    "price": 0,
+    "img": "pastry-3.jpg",
+    "note": "Price on request"
+  },
+  {
+    "id": "pastry-4",
+    "name": "Pastry 4",
+    "category": "Pastry",
+    "price": 0,
+    "img": "pastry-4.jpg",
+    "note": "Price on request"
+  },
+  {
+    "id": "pastry-5",
+    "name": "Pastry 5",
+    "category": "Pastry",
+    "price": 0,
+    "img": "pastry-5.jpg",
+    "note": "Price on request"
+  },
+  {
+    "id": "pasta",
+    "name": "Pasta",
+    "category": "Pasta",
+    "img": "pasta.jpg",
+    "variants": [
+      {
+        "label": "Macaroni Full",
+        "price": 100
+      },
+      {
+        "label": "Macaroni Half",
+        "price": 50
+      },
+      {
+        "label": "Penne Full",
+        "price": 120
+      },
+      {
+        "label": "Penne Half",
+        "price": 60
+      }
+    ]
+  },
+  {
+    "id": "french-fries",
+    "name": "French Fries",
+    "category": "Fries & Snacks",
+    "price": 60,
+    "img": "french-fries.jpg"
+  },
+  {
+    "id": "peri-peri-fries",
+    "name": "Peri Peri French Fries",
+    "category": "Fries & Snacks",
+    "price": 70,
+    "img": "peri-peri-fries.jpg"
+  },
+  {
+    "id": "smileys",
+    "name": "Smileys (5 pcs)",
+    "category": "Fries & Snacks",
+    "price": 60,
+    "img": "smileys.jpg"
+  },
+  {
+    "id": "samosa",
+    "name": "Samosa",
+    "category": "Fries & Snacks",
+    "price": 15,
+    "img": "samosa.jpg"
+  },
+  {
+    "id": "momos",
+    "name": "Momos",
+    "category": "Chinese",
+    "img": "momos.jpg",
+    "variants": [
+      {
+        "label": "Full",
+        "price": 60
+      },
+      {
+        "label": "Half",
+        "price": 30
+      }
+    ]
+  },
+  {
+    "id": "chowmin",
+    "name": "Chaumin",
+    "category": "Chinese",
+    "img": "chowmin.jpg",
+    "variants": [
+      {
+        "label": "Full",
+        "price": 100
+      },
+      {
+        "label": "Half",
+        "price": 60
+      }
+    ]
+  },
+  {
+    "id": "fried-momos",
+    "name": "Fried Momos",
+    "category": "Chinese",
+    "img": "fried-momos.jpg",
+    "variants": [
+      {
+        "label": "Full",
+        "price": 80
+      },
+      {
+        "label": "Half",
+        "price": 40
+      }
+    ]
+  },
+  {
+    "id": "veg-spring-roll",
+    "name": "Veg Spring Roll",
+    "category": "Chinese",
+    "img": "veg-spring-roll.jpg",
+    "variants": [
+      {
+        "label": "Full",
+        "price": 100
+      },
+      {
+        "label": "Half",
+        "price": 50
+      }
+    ]
+  },
+  {
+    "id": "vanilla-shake",
+    "name": "Vanilla Shake",
+    "category": "Drinks",
+    "price": 60,
+    "img": "vanilla-shake.jpg"
+  },
+  {
+    "id": "strawberry-shake",
+    "name": "Strawberry Shake",
+    "category": "Drinks",
+    "price": 60,
+    "img": "strawberry-shake.jpg"
+  },
+  {
+    "id": "mango-shake",
+    "name": "Mango Shake",
+    "category": "Drinks",
+    "price": 60,
+    "img": "mango-shake.jpg"
+  },
+  {
+    "id": "chocolate-shake",
+    "name": "Chocolate Shake",
+    "category": "Drinks",
+    "price": 70,
+    "img": "chocolate-shake.jpg"
+  },
+  {
+    "id": "butter-scotch-shake",
+    "name": "Butter Scotch Shake",
+    "category": "Drinks",
+    "price": 70,
+    "img": "butter-scotch-shake.jpg"
+  },
+  {
+    "id": "cold-coffee",
+    "name": "Cold Coffee",
+    "category": "Drinks",
+    "price": 70,
+    "img": "cold-coffee.jpg"
+  },
+  {
+    "id": "cold-coffee-ice-cream",
+    "name": "Cold Coffee with Ice Cream",
+    "category": "Drinks",
+    "price": 80,
+    "img": "cold-coffee-ice-cream.jpg"
+  },
+  {
+    "id": "ice-tea-lemon",
+    "name": "Ice Tea Lemon",
+    "category": "Drinks",
+    "price": 70,
+    "img": "ice-tea-lemon.jpg"
+  },
+  {
+    "id": "burger",
+    "name": "Burger",
+    "category": "Burger & Sandwich",
+    "price": 50,
+    "img": "burger.jpg"
+  },
+  {
+    "id": "veg-sandwich",
+    "name": "Veg Sandwich",
+    "category": "Burger & Sandwich",
+    "price": 60,
+    "img": "veg-sandwich.jpg"
+  },
+  {
+    "id": "potato-sandwich",
+    "name": "Potato Sandwich",
+    "category": "Burger & Sandwich",
+    "price": 70,
+    "img": "potato-sandwich.jpg"
+  },
+  {
+    "id": "extra-cheese-slice",
+    "name": "Extra Cheese Slice",
+    "category": "Burger & Sandwich",
+    "price": 15,
+    "img": "extra-cheese-slice.jpg"
+  }
+]

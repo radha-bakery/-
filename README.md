@@ -1,1 +1,0 @@
-Replace images with same filenames. Upload to GitHub Pages.

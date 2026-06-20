@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Radha Bakers | Online Order Shimla</title>
+  <meta name="description" content="Radha Bakers, Lower Khalini Shimla. Order cakes, pizza, snacks, Chinese and drinks on WhatsApp.">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="top-strip">
+    <span>📍 Opposite Kali Mandir, Lower Khalini, Shimla</span>
+    <span>☎️ 9418310089</span>
+    <span>Freshly baked. Made with love.</span>
+  </div>
+
+  <header class="header" id="home">
+    <nav class="nav">
+      <a href="#home" class="brand">
+        <img src="assets/logo.png" alt="Radha Bakers Logo">
+        <span>Radha Bakers</span>
+      </a>
+      <div class="nav-links">
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="cart-btn" id="openCart">🛒 Cart <b id="cartCount">0</b></button>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Bakery • Cafe • Fast Food</p>
+        <h1>राधा बेकर्स</h1>
+        <h2>स्वाद अपनापन का</h2>
+        <p>Fresh cakes, pizza, snacks, Chinese, shakes and cold coffee. Add items to cart and send the full order directly on WhatsApp.</p>
+        <div class="hero-actions">
+          <a class="primary" href="#products">Order Now</a>
+          <a class="secondary" href="tel:+919418310089">Call Now</a>
+          <a class="whatsapp" href="https://wa.me/919418310089" target="_blank">WhatsApp</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img class="hero-logo" src="assets/logo.png" alt="Radha Bakers">
+        <img class="float one" src="assets/products/choco-truffle-cake.jpg" alt="">
+        <img class="float two" src="assets/products/veg-pizza.jpg" alt="">
+        <img class="float three" src="assets/products/cold-coffee.jpg" alt="">
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="products-section" id="products">
+      <div class="section-title">
+        <p>Online Ordering</p>
+        <h2>Choose Products</h2>
+      </div>
+      <div class="category-tabs" id="categoryTabs"></div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div>
+        <p class="eyebrow">Visit or Order</p>
+        <h2>Radha Bakers, Shimla</h2>
+        <p>Opposite Kali Mandir, Lower Khalini, Shimla</p>
+      </div>
+      <div class="contact-actions">
+        <a class="primary" href="tel:+919418310089">Call 9418310089</a>
+        <a class="whatsapp" href="https://wa.me/919418310089" target="_blank">WhatsApp Order</a>
+      </div>
+    </section>
+  </main>
+
+  <aside class="cart-panel" id="cartPanel" aria-hidden="true">
+    <div class="cart-head">
+      <h3>Your Cart</h3>
+      <button id="closeCart">×</button>
+    </div>
+
+    <div class="checkout-form">
+      <h4>Booking Details</h4>
+      <input id="customerName" type="text" placeholder="Customer Name *">
+      <input id="customerMobile" type="tel" placeholder="Mobile Number *">
+      <select id="orderType">
+        <option value="Take Away">Take Away</option>
+        <option value="Home Delivery">Home Delivery</option>
+      </select>
+      <input id="orderDate" type="date">
+      <input id="orderTime" type="time">
+      <textarea id="customerAddress" placeholder="Address (for delivery / optional for takeaway)"></textarea>
+      <div class="upi-box">
+        <b>UPI ID</b>
+        <span id="upiDisplay">paytm.s24oec1@pty</span>
+      </div>
+      <button class="pay-btn" id="upiPayBtn">Pay Advance & Send Screenshot</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-summary">
+      <div><span>Subtotal</span><b id="subTotal">₹0</b></div>
+      <div><span>Packaging</span><b>₹0</b></div>
+      <div class="total"><span>Total</span><b id="grandTotal">₹0</b></div>
+      <button class="checkout" id="checkoutBtn">Send Order on WhatsApp</button>
+      <small>Payment ke baad screenshot WhatsApp par bhejna hai. Order screenshot verify hone ke baad confirm hoga.</small>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <a class="floating-whatsapp" href="https://wa.me/919418310089" target="_blank">WhatsApp</a>
+
+  <script src="script.js"></script>
+</body>
+</html>
